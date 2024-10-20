@@ -1,0 +1,34 @@
+<div class="category-description-container">
+    <div class="category-description" id="categoryDescription">
+        {{ .Content }}
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-primary" id="toggleDescriptionBtn">Xem Chi Tiết</button>
+    </div>
+</div>
+
+<style>
+    .category-description-container {
+        position: relative;
+    }
+    .category-description {
+        max-height: 300px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    .read-more-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+        pointer-events: none;
+    }
+    .category-description.expanded {
+        max-height: none;
+    }
+    .category-description.expanded + .text-center .btn {
+        margin-top: 20px;
+    }
+</style>
